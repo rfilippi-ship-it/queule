@@ -3,55 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <title>Galería de Videos</title>
-    <style>
-        /* Estilos básicos para la página */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            margin: 0;
-            padding: 20px;
-            color: #333;
-        }
+<style>
+    /* Estilos básicos para la página */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        margin: 0;
+        padding: 20px;
+        color: #333;
+    }
 
-        h1 {
-            text-align: center;
-            margin-bottom: 40px;
-        }
+    h1 {
+        text-align: center;
+        margin-bottom: 40px;
+    }
 
-        /* Estilo para los títulos de cada fila */
-        .titulo-fila {
-            text-align: center;
-            font-size: 1.5rem;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            color: #0056b3;
-            width: 100%;
-        }
+    /* Estilo para los títulos de cada fila */
+    .titulo-fila {
+        text-align: center;
+        font-size: 1.5rem;
+        margin-top: 30px;
+        margin-bottom: 15px;
+        color: #0056b3;
+        width: 100%;
+    }
 
-        /* Contenedor de la fila (actúa como una rejilla de 2 columnas) */
+    /* Contenedor de la fila (rejilla de 2 columnas) */
+    .fila-videos {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Crea 2 columnas iguales */
+        gap: 20px; /* Espacio entre los videos */
+        max-width: 1000px;
+        margin: 0 auto 50px auto; /* Centra la fila */
+    }
+
+    /* NUEVO: Estilo unificado para los reproductores de video */
+    .fila-videos video {
+        width: 100%;
+        
+        /* 1. Forzamos a que todos midan lo mismo de alto usando proporciones */
+        aspect-ratio: 16 / 9; 
+        
+        /* 2. Evita que el video se estire feo si no coincide con la proporción */
+        object-fit: cover; 
+        
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: #000;
+    }
+
+    /* Adaptación para pantallas pequeñas (celulares) */
+    @media (max-width: 768px) {
         .fila-videos {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr); /* Crea 2 columnas iguales */
-            gap: 20px; /* Espacio entre los videos */
-            max-height: 700px;
-            margin: 0 auto 50px auto; /* Centra la fila y da espacio abajo */
+            grid-template-columns: 1fr; /* Pasa a 1 sola columna en celulares */
         }
+    }
+</style>
 
-        /* Estilo para cada reproductor de video */
-        .fila-videos video {
-            width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            background-color: #000;
-        }
-
-        /* Adaptación para pantallas pequeñas (celulares) */
-        @media (max-width: 768px) {
-            .fila-videos {
-                grid-template-columns: 1fr; /* Pasa a 1 sola columna en pantallas chicas */
-            }
-        }
-    </style>
 </head>
 <body> 
 
