@@ -28,37 +28,45 @@
         width: 100%;
     }
 
-    /* Contenedor de la fila (rejilla de 2 columnas) */
+    /* CAMBIO PRINCIPAL: Usamos Flexbox alineando al estiramiento */
     .fila-videos {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr); /* Crea 2 columnas iguales */
+        display: flex;
+        justify-content: center;
+        align-items: stretch; /* Fuerza a que los dos bloques midan lo mismo de alto */
         gap: 20px; /* Espacio entre los videos */
-        max-width: 1000px;
-        margin: 0 auto 50px auto; /* Centra la fila */
+        max-width: 1200px; /* Un poco más ancho para que quepan bien los dos gráficos */
+        margin: 0 auto 50px auto;
     }
 
-    /* NUEVO: Estilo unificado para los reproductores de video */
-    .fila-videos video {
-        width: 100%;
-        
-        /* 1. Forzamos a que todos midan lo mismo de alto usando proporciones */
-        aspect-ratio: 16 / 9; 
-        
-        /* 2. Evita que el video se estire feo si no coincide con la proporción */
-        object-fit: cover; 
-        
+    /* Contenedor individual para cada video */
+    .video-contenedor {
+        flex: 1; /* Hace que las dos columnas tengan exactamente el mismo ancho */
+        display: flex;
+        flex-direction: column;
+        background-color: #ffffff; /* Fondo blanco para rellenar si un video es milimétricamente más chico */
         border-radius: 8px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        background-color: #000;
+        padding: 10px; /* Espacio interno de cortesía */
+        box-sizing: border-box;
+    }
+
+    /* Ajuste perfecto para el reproductor de video */
+    .video-contenedor video {
+        width: 100%;
+        height: 100%;
+        object-fit: contain; /* Garantiza que el gráfico NO se corte ni se deforme */
+        border-radius: 4px;
+        background-color: #fff; /* Fondo blanco detrás del video si sobra espacio */
     }
 
     /* Adaptación para pantallas pequeñas (celulares) */
     @media (max-width: 768px) {
         .fila-videos {
-            grid-template-columns: 1fr; /* Pasa a 1 sola columna en celulares */
+            flex-direction: column; /* Se apilan uno abajo del otro en el celular */
         }
     }
 </style>
+
 
 </head>
 <body> 
