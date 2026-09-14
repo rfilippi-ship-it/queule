@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Galería de Videos</title>
+<style>
+    /* Estilos básicos para la página */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        margin: 0;
+        padding: 20px;
+        color: #333;
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    /* Estilo para los títulos de cada fila */
+    .titulo-fila {
+        text-align: center;
+        font-size: 1.5rem;
+        margin-top: 40px;
+        margin-bottom: 15px;
+        color: #0056b3;
+        width: 100%;
+    }
+
+    /* Contenedor flexible */
+    .fila-videos {
+        display: flex;
+        justify-content: center; /* Centra el bloque de videos */
+        align-items: center;     /* Alinea los videos perfectamente por su centro horizontal */
+        gap: 20px;               /* Espacio entre los dos videos */
+        max-width: 98vw;         /* Asegura que el contenedor no supere el ancho de la pantalla */
+        margin: 0 auto;
+    }
+
+    /* SOLUCIÓN DINÁMICA: Altura basada en el ancho disponible de la pantalla */
+    .fila-videos video {
+        /* Evaluamos el espacio: si hay 2 videos y el izquierdo es más vertical, */
+        /* limitamos su altura al 32% del ancho de la pantalla (32vw) */
+        height: 32vw;            
+        width: auto;             /* Mantiene la proporción real del video */
+        max-width: 50%;          /* Evita que un video muy ancho tape al otro */
+        
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        border-radius: 6px;
+        background-color: #fff;
+    }
+
+    /* Adaptación para dispositivos móviles (donde no caben dos juntos por espacio físico) */
+    @media (max-width: 768px) {
+        .fila-videos {
+            flex-direction: column; 
+        }
+        .fila-videos video {
+            height: auto;        
+            width: 100%;
+            max-width: 100%;
+        }
+    }
+</style>
+
+</head>
+<body> 
+
+    <h1>Alternativa 1</h1>
+
+    <!-- ================= FILA 1 ================= -->
+    <h2 class="titulo-fila">7 días - Hs=5.9 m - Q=7 m3/s - Dir = Nw - Tp=14 s</h2>
+    <div class="fila-videos">
+       <video src="final/alt_1/7d_hs_59_q7_nw_tp_14/corrientes_teleMAC.mp4" controls></video>
+       <video src="final/alt_1/7d_hs_59_q7_nw_tp_14/video_evolucion_fondo_GAIA_-2a2_isolineas0p5.mp4" controls></video>
+    </div>
+
+    <!-- ================= FILA 2 ================= -->
+    <h2 class="titulo-fila">Título de la Fila 2</h2>
+    <div class="fila-videos">
+        <video src="final/alt_1/7d_hs_59_q7_nw_tp_14/corrientes_teleMAC.mp4" controls></video>
+        <video src="final/alt_1/7d_hs_59_q7_nw_tp_14/video_evolucion_fondo_GAIA_-2a2_isolineas0p5.mp4" controls></video>
+    </div>
+
+    <!-- ================= FILA 3 ================= -->
+    <h2 class="titulo-fila">Título de la Fila 3</h2>
+    <div class="fila-videos">
+        <video src="final/cas_0/c0_7d_hs_59_q7_nw_tp_14/corrientes_teleMAC.mp4" controls></video>
+        <video src="final/cas_0/c0_7d_hs_59_q7_nw_tp_14/video_evolucion_fondo_GAIA_-2a2_isolineas0p5.mp4" controls></video>
+    </div>
+
+</body>
+</html>
+2m_hs_27_q7_sw_tp_14
+7d_hs_59_q7_nw_tp_14
+7d_hs_72_q7_sw_tp_14
+7d_hs_8_q7_nw_tp_14
+7d_hs_9_q7_sw_tp_14
