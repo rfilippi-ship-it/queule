@@ -42,10 +42,10 @@
     .fila-videos video {
         /* Evaluamos el espacio: si hay 2 videos y el izquierdo es más vertical, */
         /* limitamos su altura al 32% del ancho de la pantalla (32vw) */
-        height: 32vw;            
+        height: 32vw;
         width: auto;             /* Mantiene la proporción real del video */
         max-width: 50%;          /* Evita que un video muy ancho tape al otro */
-        
+
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
         border-radius: 6px;
         background-color: #fff;
@@ -54,10 +54,10 @@
     /* Adaptación para dispositivos móviles (donde no caben dos juntos por espacio físico) */
     @media (max-width: 768px) {
         .fila-videos {
-            flex-direction: column; 
+            flex-direction: column;
         }
         .fila-videos video {
-            height: auto;        
+            height: auto;
             width: 100%;
             max-width: 100%;
         }
@@ -65,9 +65,16 @@
 </style>
 
 </head>
-<body> 
+<body>
 
     <h1>Alternativa 1</h1>
+
+    <!-- ================= FILA 1 ================= -->
+    <h2 class="titulo-fila">2 meses - Hs=2.7 m - Q=7 m3/s - Dir = Sw - Tp=14 s</h2>
+    <div class="fila-videos">
+       <video src="final/alt_1/2m_hs_27_q7_sw_tp_14/corrientes_teleMAC.mp4" controls></video>
+       <video src="final/alt_1/2m_hs_27_q7_sw_tp_14/video_evolucion_fondo_GAIA_-2a2_isolineas0p5.mp4" controls></video>
+    </div>
 
     <!-- ================= FILA 1 ================= -->
     <h2 class="titulo-fila">7 días - Hs=5.9 m - Q=7 m3/s - Dir = Nw - Tp=14 s</h2>
@@ -92,4 +99,3 @@
 
 </body>
 </html>
-
